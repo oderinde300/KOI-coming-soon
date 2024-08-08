@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #000;
+}
+
+@font-face {
+  font-family: "YourCustomFont2";
+  src: url("/public/fonts/Molde-Expanded-Semibold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "YourCustomFont";
+  src: url("/public/fonts/Molde-Expanded-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-molde-400 {
+  font-family: "YourCustomFont", sans-serif;
+}
+
+.font-molde-700 {
+  font-family: "YourCustomFont2", sans-serif;
+}
+
+.body-size {
+  max-width: 1440px;
+}
+
+.scroller {
+  scrollbar-width: thin;
+  scrollbar-color: #394045 transparent;
+}
+
+.custom-outline-text {
+  color: #cfcdd2;
+  -webkit-text-stroke: 0.3px white;
+  text-stroke: 1px white;
+}
