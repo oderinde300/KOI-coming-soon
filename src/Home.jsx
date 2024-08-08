@@ -147,7 +147,7 @@ const Home = () => {
               required
             />
             <button
-              className="px-4 sm:px-[30.5px] py-2 sm:py-4 text-white bg-gradient-to-r from-[#A759FF] via-[#F05615] to-[#FFA515]  rounded-[50px] text-app-sm shadow-lg hover:opacity-90 transition-opacity duration-300 text-nowrap font-molde-700"
+              className="px-4 sm:px-[30.5px] py-2 sm:py-4 text-white bg-gradient-to-r from-[#A759FF] via-[#F05615] to-[#FFA515]  rounded-[50px] text-xs sm:text-app-sm shadow-lg hover:opacity-90 transition-opacity duration-300 text-nowrap font-molde-700"
               disabled={loading}
             >
               {loading ? "Loading..." : "Notify Me"}
