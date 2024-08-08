@@ -138,7 +138,7 @@ const Home = () => {
           </p>
           <div className="border border-white mb-2 p-1 rounded-[50px] flex justify-between items-center w-full">
             <input
-              className="bg-transparent placeholder:text-white text-white font-molde-400 placeholder:text-app-sm p-4 outline-none rounded-[5px] w-full"
+              className="bg-transparent placeholder:text-white text-white font-molde-400 placeholder:text-app-sm p-2 sm:p-4 outline-none rounded-[5px] sm:w-full"
               placeholder="Enter Email Address"
               disabled={loading}
               value={email}
@@ -147,7 +147,7 @@ const Home = () => {
               required
             />
             <button
-              className="px-[30.5px] py-4 text-white bg-gradient-to-r from-[#A759FF] via-[#F05615] to-[#FFA515]  rounded-[50px] text-app-sm shadow-lg hover:opacity-90 transition-opacity duration-300 text-nowrap font-molde-700"
+              className="px-4 sm:px-[30.5px] py-2 sm:py-4 text-white bg-gradient-to-r from-[#A759FF] via-[#F05615] to-[#FFA515]  rounded-[50px] text-app-sm shadow-lg hover:opacity-90 transition-opacity duration-300 text-nowrap font-molde-700"
               disabled={loading}
             >
               {loading ? "Loading..." : "Notify Me"}
