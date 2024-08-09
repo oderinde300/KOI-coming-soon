@@ -132,7 +132,7 @@ const Home = () => {
           ))}
         </div>
 
-        <div className="max-w-[512px] w-full">
+        <div className="sm:max-w-[512px] w-full">
           <p className="text-sm sm:text-base font-molde-400 mb-6 text-[#FFFFFFCC] custom-outline-text">
             *We promise not to spam your mail.
           </p>
@@ -147,12 +147,18 @@ const Home = () => {
               required
             />
             <button
-              className="px-4 sm:px-[30.5px] py-2 sm:py-4 text-white bg-gradient-to-r from-[#A759FF] via-[#F05615] to-[#FFA515]  rounded-[50px] text-xs sm:text-app-sm shadow-lg hover:opacity-90 transition-opacity duration-300 text-nowrap font-molde-700"
+              className="hidden sm:block px-4 sm:px-[30.5px] py-2 sm:py-4 text-white bg-gradient-to-r from-[#A759FF] via-[#F05615] to-[#FFA515]  rounded-[50px] text-xs sm:text-app-sm shadow-lg hover:opacity-90 transition-opacity duration-300 text-nowrap font-molde-700 "
               disabled={loading}
             >
               {loading ? "Loading..." : "Notify Me"}
             </button>
           </div>
+          <button
+            className="sm:hidden px-4 sm:px-[30.5px] py-2 sm:py-4 text-white bg-gradient-to-r from-[#A759FF] via-[#F05615] to-[#FFA515]  rounded-[50px] text-xs sm:text-app-sm shadow-lg hover:opacity-90 transition-opacity duration-300 text-nowrap font-molde-700"
+            disabled={loading}
+          >
+            {loading ? "Loading..." : "Notify Me"}
+          </button>
         </div>
       </div>
 
