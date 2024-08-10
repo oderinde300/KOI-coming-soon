@@ -94,6 +94,7 @@ const Home = () => {
             <a
               href="#"
               className="text-white bg-[#FFFFFF33] rounded-[5px] p-2 cursor-pointer"
+              key={index}
             >
               <ImageComp image={item?.image} alt={item?.alt} />
             </a>
@@ -106,15 +107,12 @@ const Home = () => {
           <h1 className="text-3xl sm:text-app-5xl font-bold font-molde-700 text-transparent bg-clip-text bg-gradient-to-r from-[#A759FF] via-[#F05615] to-[#FFA515] mb-0 pb-0">
             COMING SOON
           </h1>
-          {/* <p className="text-xl sm:text-2xl text-gray-300 font-medium text-shadow-[0px_0px_2px_2px_rgba(255,255,255,1)]">
-            Get Ready For Something Big!
-          </p> */}
           <p className="text-base sm:text-2xl text-gray-300 custom-outline-text font-molde-400">
             Get Ready For Something Big!
           </p>
         </div>
 
-        <div className="flex  space-x-1 sm:space-x-4 items-center inset-0">
+        <div className="flex  space-x-1 sm:space-x-4 items-center">
           {Object.keys(timeLeft).map((interval, index) => (
             <React.Fragment key={index}>
               <div className="text-center">
