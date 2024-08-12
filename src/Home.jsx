@@ -49,32 +49,32 @@ const Home = () => {
   const media = [
     {
       image: "/images/linkedin.svg",
-      path: "",
+      path: "https://www.linkedin.com/in/ko-inflation-8563b1268/",
       alt: "linkedin logo",
     },
     {
       image: "/images/youtube.svg",
-      path: "",
+      path: "https://www.youtube.com/@MissKOI-VirtualIP",
       alt: "youtube logo",
     },
     {
       image: "/images/instagram.svg",
-      path: "",
+      path: " https://www.instagram.com/nft_mskoi/",
       alt: "instagram logo",
     },
     {
       image: "/images/facebook.svg",
-      path: "",
+      path: "https://www.facebook.com/people/KOI-Mobilize/100090738491053/",
       alt: "facebook logo",
     },
     {
       image: "/images/telegram.svg",
-      path: "",
+      path: "https://t.me/MSKOIWEB3",
       alt: "telegram logo",
     },
     {
       image: "/images/twitter.svg",
-      path: "",
+      path: "https://twitter.com/koi_inflation",
       alt: "twitter logo",
     },
   ];
@@ -92,9 +92,11 @@ const Home = () => {
         <div className="flex space-x-4">
           {media.map((item, index) => (
             <a
-              href="#"
+              href={item?.path}
               className="text-white bg-[#FFFFFF33] rounded-[5px] p-2 cursor-pointer"
               key={index}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <ImageComp image={item?.image} alt={item?.alt} />
             </a>
