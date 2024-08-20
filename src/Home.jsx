@@ -1,12 +1,38 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import ImageComp from "./Image";
+import { toast } from "react-toastify";
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
 
+  const handleNotify = async (e) => {
+    e.preventDefault();
+    try {
+      setLoading(true);
+      const response = await axios.post(
+        "https://koi-api-production.up.railway.app/api/v1/public/submit",
+        {
+          email,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      toast.success(response.data?.message);
+      setEmail("");
+      setLoading(false);
+    } catch (error) {
+      toast.error(error?.response?.data?.message);
+      setLoading(false);
+    }
+  };
+
   const calculateTimeLeft = () => {
-    const difference = +new Date("2024-9-31") - +new Date();
+    const difference = +new Date("2024-9-05") - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -132,7 +158,7 @@ const Home = () => {
           ))}
         </div>
 
-        <div className="sm:max-w-[512px] w-full">
+        <form className="sm:max-w-[512px] w-full" onSubmit={handleNotify}>
           <p className="text-sm sm:text-base font-molde-400 mb-6 text-[#FFFFFFCC] custom-outline-text">
             *We promise not to spam your mail.
           </p>
@@ -149,6 +175,7 @@ const Home = () => {
             <button
               className="hidden sm:block px-4 sm:px-[30.5px] py-2 sm:py-4 text-white bg-gradient-to-r from-[#A759FF] via-[#F05615] to-[#FFA515]  rounded-[50px] text-xs sm:text-app-sm shadow-lg hover:opacity-90 transition-opacity duration-300 text-nowrap font-molde-700 "
               disabled={loading}
+              type="submit"
             >
               {loading ? "Loading..." : "Notify Me"}
             </button>
@@ -156,10 +183,11 @@ const Home = () => {
           <button
             className="sm:hidden px-4 sm:px-[30.5px] py-2 sm:py-4 text-white bg-gradient-to-r from-[#A759FF] via-[#F05615] to-[#FFA515]  rounded-[50px] text-xs sm:text-app-sm shadow-lg hover:opacity-90 transition-opacity duration-300 text-nowrap font-molde-700"
             disabled={loading}
+            type="submit"
           >
             {loading ? "Loading..." : "Notify Me"}
           </button>
-        </div>
+        </form>
       </div>
 
       <footer className="w-full text-center text-white mt-6 pb-4">
